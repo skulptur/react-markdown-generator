@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Heading, Bold, Italic } from '../src/'
+import { Heading, Bold, Italic, BoldItalic, Blockquote } from '../src/'
 const ReactMarkdown = require('react-markdown')
 import { times } from '../src/utils'
 
@@ -34,6 +34,9 @@ const App = () => {
         <br />
         Let's make some text <Italic>italic</Italic>.
         <br />
+        Let's make some text <BoldItalic>bold italic</BoldItalic>.
+        <br />
+        <Blockquote>this is a blockquote</Blockquote>
       </pre>
       <ReactMarkdown source={markdownString} />
     </div>
