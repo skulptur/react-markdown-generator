@@ -19,7 +19,7 @@ Use
 // TODO
 ```
 
-[Examples](https://github.com/skulptur/unit-fns/tree/master/example)
+[Examples](https://github.com/skulptur/markdown-fns/tree/master/example)
 
 ## API
 - Functions that can be pure, are pure.
