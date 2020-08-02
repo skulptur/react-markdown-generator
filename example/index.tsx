@@ -1,44 +1,51 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Heading, Bold, Italic, BoldItalic, Blockquote } from '../src/'
 const ReactMarkdown = require('react-markdown')
-import { times } from '../src/utils'
+import {
+  bold,
+  code,
+  heading,
+  image,
+  inlineCode,
+  italic,
+  link,
+  quote,
+  strike,
+  always,
+  join,
+  joinWith,
+  prefix,
+  postfix,
+  spaces,
+  lines,
+  times,
+  wrap,
+  ordered,
+  unordered,
+} from '../src'
+
+const markdown = lines([
+  lines(times(index => heading(index + 1, 'This is a heading.'), 6)),
+  'This is regular text.',
+  italic('Italic text.'),
+  bold('Bold text.'),
+  strike('Strike through text.'),
+  joinWith('\n\n', [
+    'This is regular text.',
+    spaces(['Text and', inlineCode('inline code'), '.']),
+    'and then some more text.',
+  ]),
+  ordered(['Apples', 'Oranges', 'Bananas']),
+])
 
 const App = () => {
   const preRef = React.useRef<HTMLPreElement | null>(null)
-  const [markdownString, setMarkdownString] = React.useState<string>('')
-
-  React.useEffect(() => {
-    const pre = preRef.current!
-    setMarkdownString(pre.innerText)
-  }, [])
 
   return (
     <div>
-      <pre ref={preRef}>
-        {times(
-          index => (
-            <>
-              <Heading key={index} level={index + 1}>
-                Hello World
-              </Heading>
-              <br />
-            </>
-          ),
-          5
-        )}
-        <br />
-        Let's make some text <Bold>bold</Bold>.
-        <br />
-        <br />
-        Let's make some text <Italic>italic</Italic>.
-        <br />
-        Let's make some text <BoldItalic>bold italic</BoldItalic>.
-        <br />
-        <Blockquote>this is a blockquote</Blockquote>
-      </pre>
-      <ReactMarkdown source={markdownString} />
+      <pre ref={preRef}>{markdown}</pre>
+      <ReactMarkdown source={markdown} />
     </div>
   )
 }
