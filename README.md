@@ -14,11 +14,67 @@ yarn add markdown-fns
 Use
 
 ```typescript
-// TODO
+import {
+  bold,
+  heading,
+  inlineCode,
+  italic,
+  lines,
+  link,
+  ordered,
+  spaces,
+  strike,
+  times,
+  unordered,
+} from '../src'
+
+const exampleUrl =
+  'https://github.com/skulptur/markdown-fns/tree/master/example'
+const fruits = ['Apples', 'Oranges', 'Bananas']
+
+const markdown = lines([
+  lines(times(index => heading(index + 1, 'This is a heading.'), 6)),
+  'This is regular text.',
+  italic('Italic text.'),
+  bold('Bold text.'),
+  strike('Strike through text.'),
+  lines([
+    'More regular text.',
+    spaces(['Text and', inlineCode('inline code'), '.']),
+    'and then some more text.',
+  ]),
+  ordered(fruits),
+  unordered(fruits),
+  link('example', exampleUrl),
+]) // => output below!
 ```
 
-[Examples](https://github.com/skulptur/markdown-fns/tree/master/example)
+# This is a heading.
+## This is a heading.
+### This is a heading.
+#### This is a heading.
+##### This is a heading.
+###### This is a heading.
+This is regular text.
 
-## API
-- Functions that can be pure, are pure.
-- The argument order is optimized for partial application.
+***Italic text.***
+
+**Bold text.**
+
+~~Strike through text.~~
+
+This is regular text.
+
+Text and `inline code`.
+
+and then some more text.
+
+0. Apples
+1. Oranges
+2. Bananas
+
+* Apples
+* Oranges
+* Bananas
+
+[example](https://github.com/skulptur/markdown-fns/tree/master/example)
