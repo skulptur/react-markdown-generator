@@ -10,6 +10,7 @@ export { quote } from './lib/quote'
 export { strike } from './lib/strike'
 export { ordered } from './lib/ordered'
 export { unordered } from './lib/unordered'
+export { table } from './lib/table'
 
 // utils
 export { always } from './utils/always'

@@ -14,6 +14,7 @@ import {
   strike,
   times,
   unordered,
+  table,
 } from '../src'
 
 const exampleUrl =
@@ -34,6 +35,12 @@ const markdown = lines([
   ordered(fruits),
   unordered(fruits),
   link('example', exampleUrl),
+  table([
+    ['Fruit', 'price'],
+    ['Apple', '10'],
+    ['Orange', '10'],
+    ['Banana', '10'],
+  ]),
 ])
 
 const App = () => {
