@@ -1,6 +1,7 @@
 Warning: This is a work in progress and the API isn't currently stable yet!
 
 ## Motivation
+
 Markdown is meant for humans to type, but isn't any good when you want to abstract patterns that often appear in documentation. With the functions provided by markdown-fns it is not only possible but also very easy to do so.
 
 ## Get started
@@ -28,7 +29,7 @@ import {
   strike,
   times,
   unordered,
-} from '../src'
+} from 'markdown-fns'
 
 const exampleUrl =
   'https://github.com/skulptur/markdown-fns/tree/master/example'
@@ -48,18 +49,24 @@ const markdown = lines([
   ordered(fruits),
   unordered(fruits),
   link('example', exampleUrl),
-]) // => output below!
+]) // output below!
 ```
 
 # This is a heading.
+
 ## This is a heading.
+
 ### This is a heading.
+
 #### This is a heading.
+
 ##### This is a heading.
+
 ###### This is a heading.
+
 This is regular text.
 
-***Italic text.***
+**_Italic text._**
 
 **Bold text.**
 
@@ -71,12 +78,12 @@ Text and `inline code`.
 
 and then some more text.
 
-0. Apples
-1. Oranges
-2. Bananas
+1. Apples
+2. Oranges
+3. Bananas
 
-* Apples
-* Oranges
-* Bananas
+- Apples
+- Oranges
+- Bananas
 
 [example](https://github.com/skulptur/markdown-fns/tree/master/example)
