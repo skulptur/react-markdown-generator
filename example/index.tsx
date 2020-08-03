@@ -4,26 +4,21 @@ import * as ReactDOM from 'react-dom'
 const ReactMarkdown = require('react-markdown')
 import {
   bold,
-  code,
   heading,
-  image,
   inlineCode,
   italic,
-  link,
-  quote,
-  strike,
-  always,
-  join,
-  joinWith,
-  prefix,
-  postfix,
-  spaces,
   lines,
-  times,
-  wrap,
+  link,
   ordered,
+  spaces,
+  strike,
+  times,
   unordered,
 } from '../src'
+
+const exampleUrl =
+  'https://github.com/skulptur/markdown-fns/tree/master/example'
+const fruits = ['Apples', 'Oranges', 'Bananas']
 
 const markdown = lines([
   lines(times(index => heading(index + 1, 'This is a heading.'), 6)),
@@ -31,12 +26,14 @@ const markdown = lines([
   italic('Italic text.'),
   bold('Bold text.'),
   strike('Strike through text.'),
-  joinWith('\n\n', [
-    'This is regular text.',
+  lines([
+    'More regular text.',
     spaces(['Text and', inlineCode('inline code'), '.']),
     'and then some more text.',
   ]),
-  ordered(['Apples', 'Oranges', 'Bananas']),
+  ordered(fruits),
+  unordered(fruits),
+  link('example', exampleUrl),
 ])
 
 const App = () => {

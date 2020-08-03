@@ -1,1 +1,1 @@
-export const link = (label: string) => (url: string) => `[${label}](${url})`
+export const link = (label: string, url: string) => `[${label}](${url})`
