@@ -1,7 +1,7 @@
 Warning: This is a work in progress and the API isn't currently stable yet!
 
 ## Motivation
-Markdown is meant for humans to type, but isn't any good when you want to abstract certain patterns that often appear in documentation. With the functions provided by markdown-fns it is not only possible but also very easy to do so.
+Markdown is meant for humans to type, but isn't any good when you want to abstract patterns that often appear in documentation. With the functions provided by markdown-fns it is not only possible but also very easy to do so.
 
 ## Get started
 
