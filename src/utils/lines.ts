@@ -1,1 +1,1 @@
-export const lines = (stringArray: Array<string>) => stringArray.join('\n')
+export const lines = (stringArray: Array<string>) => stringArray.join('  \n')

@@ -15,6 +15,7 @@ import {
   times,
   unordered,
   table,
+  lineBreak,
 } from '../src'
 
 const exampleUrl =
@@ -27,13 +28,10 @@ const markdown = lines([
   italic('Italic text.'),
   bold('Bold text.'),
   strike('Strike through text.'),
-  lines([
-    'More regular text.',
-    spaces(['Text and', inlineCode('inline code'), '.']),
-    'and then some more text.',
-  ]),
+  spaces(['Text and', inlineCode('inline code'), '.']),
   ordered(fruits),
   unordered(fruits),
+  lineBreak(),
   link('example', exampleUrl),
   table([
     ['Fruit', 'price'],

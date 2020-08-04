@@ -1,5 +1,6 @@
 // markdown
 export { bold } from './lib/bold'
+export { lineBreak } from './lib/lineBreak'
 export { code } from './lib/code'
 export { heading } from './lib/heading'
 export { image } from './lib/image'
@@ -9,8 +10,8 @@ export { link } from './lib/link'
 export { quote } from './lib/quote'
 export { strike } from './lib/strike'
 export { ordered } from './lib/ordered'
-export { unordered } from './lib/unordered'
 export { table } from './lib/table'
+export { unordered } from './lib/unordered'
 
 // utils
 export { always } from './utils/always'
