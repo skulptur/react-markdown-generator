@@ -1,6 +1,8 @@
 import 'react-app-polyfill/ie11'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { styledText, markdownInterpreter } from './docDsl'
+
 const ReactMarkdown = require('react-markdown')
 import {
   bold,
@@ -17,6 +19,9 @@ import {
   table,
   lineBreak,
 } from '../src'
+
+const doc = styledText('bold', 'hello world')
+console.log(markdownInterpreter(doc))
 
 const exampleUrl =
   'https://github.com/skulptur/markdown-fns/tree/master/example'
@@ -38,6 +43,12 @@ const markdown = lines([
     ['Apple', '10'],
     ['Orange', '10'],
     ['Banana', '10'],
+  ]),
+  table([
+    ['Fruit', 'price', 'Fruit', 'price'],
+    ['Apple', '10', 'Apple', '10'],
+    ['Orange', '10', 'Orange', '10'],
+    ['Banana', '10', 'Banana', '10'],
   ]),
 ])
 
