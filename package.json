@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -41,6 +41,7 @@
   "author": "Gustavo Spredemann",
   "module": "dist/markdown-fns.esm.js",
   "devDependencies": {
+    "concat-ts": "^0.0.8",
     "husky": "^4.2.5",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
